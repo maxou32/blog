@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postItemLoveIts > 0,
+                'list-group-item-danger': postItemLoveIts < 0 }"
+                >
+  <div class='row'[ngStyle]="{color: getColor()}">
+	<h4 class=' col-8' >{{ postItemTitle }} </h4>
+	<p class='col-4 text-right font-italic'>{{ postItemCreated_at | date: 'dd/MM/yyyy, HH:MM'  }} </p>
+	<p>{{ postItemContent }} </p>
+  </div>
+  <div>
+	    <button class="btn btn-success mr-3"
+              (click)="onLove()">Love it !
+        </button>
+	    <button class="btn btn-danger"
+              (click)="onDontLove()">Don't love it !
+        </button>
+
+  </div>
+</li>
