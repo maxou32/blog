@@ -1,11 +1,14 @@
-<app-post-list-item 
-		   [postItemTitle]="postItemTitle"
-		   [postItemContent]="postItemContent"
-		   [postItemLoveIts]="postItemLoveIts"
-		   [postItemCreated_at]="postItemCreated_at"
-		   >
-</app-post-list-item>	
 
+<!-- pour chaque post du tableau de posts reçu, transfert d'une ligne vers post-list-item  -->
+  <ul class="list-group">
+		<app-post-list-item *ngFor="let post of posts"
+		   [postItemTitle]="post.title"
+		   [postItemContent]="post.content"
+		   [postItemLoveIts]="post.loveIts"
+		   [postItemCreated_at]="post.created_at"
+		   > 
+		</app-post-list-item>	 
+  </ul>
 
 
 

@@ -12,13 +12,8 @@
      <h2>Les derniers posts : </h2>
 	  
 		  <ul class="list-group">
-				<app-post-list *ngFor="let post of posts"
-				   [postItemTitle]="post.title"
-				   [postItemContent]="post.content"
-				   [postItemLoveIts]="post.loveIts"
-				   [postItemCreated_at]="post.created_at"
-				   >
-				</app-post-list>	 
+			  <!-- transfert du tableau de posts vers post-list  -->
+				<app-post-list [posts]="posts"></app-post-list>	  
 		  </ul>
 		 
     </div>

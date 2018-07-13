@@ -6,6 +6,8 @@ import { Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent implements OnInit {
+  
+  // réception des éléments constitutifs de chaque post
   @Input() postItemTitle: string;
   @Input() postItemContent: string;
   @Input() postItemLoveIts: number;
@@ -16,6 +18,7 @@ export class PostListItemComponent implements OnInit {
   ngOnInit() {
   }
   
+  // calcul de la couleur affecté à chaque post
   getColor() {
     if(this.postItemLoveIts > 0) {
       return 'green';
@@ -23,6 +26,8 @@ export class PostListItemComponent implements OnInit {
       return 'red';
     }
   }
+  
+  // Mise à jour des loves en fonction des clics sur les boutons
   onLove() {
     this.postItemLoveIts++ ;
   }

@@ -1,12 +1,24 @@
+<!-- affectation de la classe item
+     si le post est aimé alors il est de couleur verte
+     si le post n'est pas aimé, il est de couleur rouge
+-->
+
+
+
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': postItemLoveIts > 0,
                 'list-group-item-danger': postItemLoveIts < 0 }"
                 >
+  <!-- historie de varier les façons de faire, la couleur de la police est donnée par une focntion -->
+  
+  
   <div class='row'[ngStyle]="{color: getColor()}">
 	<h4 class=' col-8' >{{ postItemTitle }} </h4>
+	<!-- j'aime pas la présentation des date en format short, donc j'en ai fabriqué un plus conforme à la lecture française -->
 	<p class='col-4 text-right font-italic'>{{ postItemCreated_at | date: 'dd/MM/yyyy, HH:MM'  }} </p>
 	<p>{{ postItemContent }} </p>
   </div>
+  
   <div>
 	    <button class="btn btn-success mr-3"
               (click)="onLove()">Love it !

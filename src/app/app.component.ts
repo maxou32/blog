@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  posts = [
+
+	// tableau des posts
+
+    posts = [
     {
       title: 'Mon premier post',
       content: "Information : je vous conseille d'utiliser Bootstrap pour cet exercice.  Si vous créez des list-group-item dans un list-group, vous avez les classes list-group-item-success et list-group-item-danger pour colorer les item.",
@@ -26,6 +29,6 @@ export class AppComponent {
       loveIts:0,
       created_at: new Date()
     }
-  ];
+    ];
 
 }

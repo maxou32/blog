@@ -7,11 +7,8 @@ import { Component, Input, OnInit} from '@angular/core';
 })
 
 export class PostListComponent implements OnInit {
-  @Input() postItemTitle: string;
-  @Input() postItemContent: string;
-  @Input() postItemLoveIts: number;
-  @Input() postItemCreated_at: string;
-
+  // réception du tableau  de posts	
+  @Input() posts : any [];
 
 
   constructor() { }
@@ -19,8 +16,6 @@ export class PostListComponent implements OnInit {
  
   ngOnInit() {
   }
-    
-
-
+   
 }
 
