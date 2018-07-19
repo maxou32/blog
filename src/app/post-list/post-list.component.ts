@@ -1,4 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-post-list',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit} from '@angular/core';
 
 export class PostListComponent implements OnInit {
   // réception du tableau  de posts	
-  @Input() posts : any [];
+  @Input() postArray : Post [];
 
 
   constructor() { }

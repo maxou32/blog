@@ -1,4 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'app-post-list-item',
@@ -8,11 +9,8 @@ import { Component, Input, OnInit} from '@angular/core';
 export class PostListItemComponent implements OnInit {
   
   // réception des éléments constitutifs de chaque post
-  @Input() postItemTitle: string;
-  @Input() postItemContent: string;
-  @Input() postItemLoveIts: number;
-  @Input() postItemCreated_at: string;
-
+  @Input() post: Post;
+  
   constructor() { }
 
   ngOnInit() {
@@ -20,18 +18,18 @@ export class PostListItemComponent implements OnInit {
   
   // calcul de la couleur affecté à chaque post
   getColor() {
-    if(this.postItemLoveIts > 0) {
+    if(this.post.loveIts > 0) {
       return 'green';
-    } else if(this.postItemLoveIts <0 ) {
+    } else if(this.post.loveIts <0 ) {
       return 'red';
     }
   }
   
   // Mise à jour des loves en fonction des clics sur les boutons
   onLove() {
-    this.postItemLoveIts++ ;
+    this.post.loveIts++ ;
   }
   onDontLove() {
-    this.postItemLoveIts-- ;
+    this.post.loveIts-- ;
   }
 }
