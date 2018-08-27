@@ -1,5 +1,7 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Post } from '../models/post';
+import { PostsService } from '../service/service.posts';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-post-list-item',
@@ -7,11 +9,12 @@ import { Post } from '../models/post';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent implements OnInit {
+
   
   // réception des éléments constitutifs de chaque post
   @Input() post: Post;
-  
-  constructor() { }
+  @Input() index: number;
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
   }
@@ -28,8 +31,15 @@ export class PostListItemComponent implements OnInit {
   // Mise à jour des loves en fonction des clics sur les boutons
   onLove() {
     this.post.loveIts++ ;
+	this.postsService.updatePost();
   }
   onDontLove() {
     this.post.loveIts-- ;
+	this.postsService.updatePost();
   }
+  
+  onDelete(id : number) {
+    this.postsService.removePost(id);
+  }
+
 }

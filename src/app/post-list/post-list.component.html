@@ -1,12 +1,14 @@
 
-<!-- pour chaque post du tableau de posts reçu, transfert d'une ligne vers post-list-item  -->
 
-  <ul class="list-group">
-  
-		<app-post-list-item *ngFor="let post of postArray"
-		   [post]="post"
-		   > 
-		</app-post-list-item>	 
-  </ul>
-
-
+	<div class="col-xs-12">
+		<h2>Liste des contributions</h2>
+		<div class="list-group">
+			<app-post-list-item *ngFor="let post of posts; let id = index "
+			   [post]="post"
+			   [index]="id" 
+			   > 
+			</app-post-list-item>	
+		  
+		</div>
+    
+	</div>
