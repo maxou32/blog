@@ -6,18 +6,18 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 
 //composant ajouté
-import { PostFormComponent } from './post-list/post-form/post-form.component';
-import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { HeaderComponent } from './header/header.component';						//menu demandé
+import { PostFormComponent } from './post-list/post-form/post-form.component';      //écran de saisie de nouveau post
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';		// traitement des chemins erronés
 
 //service ajouté
-import { PostsService } from './service/service.posts';
+import { PostsService } from './service/service.posts';								//creation du service rassemblant les fonctions CRUD
 
 //modules ajoutés
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
 
 //route sans controle utilisateur
 const appRoutes: Routes = [

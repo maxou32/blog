@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Post } from '../models/post';
-import * as  firebase from 'firebase';
+import { Post } from '../models/post';						//scheam de données des posts
+import * as  firebase from 'firebase';						//modules firebase pour enregistrement des valeurs (bonus)
 import Datasnapshot = firebase.database.DataSnapshot;
 
 @Injectable()
@@ -18,12 +18,12 @@ export class PostsService {
     this.postsSubject.next(this.posts);
   }
   
-  savePosts() {
+  savePosts() {												//sauvegarde des posts
     console.log(this.posts);
     firebase.database().ref('/Posts').set(this.posts);
   }
   
-  getPosts() {
+  getPosts() {												// récupération en base des posts
     firebase.database().ref('/Posts')
       .on('value', (data: Datasnapshot) => {
           this.posts = data.val() ? data.val() : [];
